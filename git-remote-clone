@@ -1,5 +1,11 @@
 #!/bin/sh
 
+if [ $# -eq 0 ]
+then
+  echo "git-remote-clone server-addr. remote-directory\nExample: git-remote-clone some.server.com Projects/projectname"
+  exit
+fi
+
 ssh $1 "mkdir $2.git && cd $2.git && git --bare init" && \
 git remote add origin "ssh://$1/~/$2.git" && \
 git config branch.master.remote origin && \
