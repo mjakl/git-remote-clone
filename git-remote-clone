@@ -1,10 +1,9 @@
 #!/bin/sh
 
-ssh $1 "mkdir $2.git && cd $2.git && git --bare init"
-git push --all ssh://$1/~/$2.git
-git remote add origin ssh://$1/~/$2.git
-git config branch.master.remote origin
-git config branch.master.merge refs/heads/master
-git fetch
-git merge master
-
+ssh $1 "mkdir $2.git && cd $2.git && git --bare init" && \
+git remote add origin "ssh://$1/~/$2.git" && \
+git config branch.master.remote origin && \
+git config branch.master.merge refs/heads/master && \
+git push --all && \
+git fetch && \
+echo "ref: refs/remotes/origin/master" > .git/refs/remotes/origin/HEAD
