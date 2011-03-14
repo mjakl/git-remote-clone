@@ -2,7 +2,7 @@
 
 if [ $# -eq 0 ]
 then
-  echo "git-remote-clone server-addr. remote-directory\nExample: git-remote-clone some.server.com Projects/projectname"
+  echo -e "git-remote-clone server-addr. remote-directory\nExample: git-remote-clone some.server.com Projects/projectname"
   exit
 fi
 
