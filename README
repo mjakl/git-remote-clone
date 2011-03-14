@@ -1,0 +1,15 @@
+h1. git remote clone
+
+The ability to clone a repository *to* another server is nice to have,
+but git doesn't provide it out of the box.
+
+This script allows one to _push_ a local repository to a non-existing
+remote one, or in other words, remotely _clone_ a repository.
+
+The repository on the remote side will be a _bare_ repository (not
+containing a working directory).
+
+Usage:
+git-remote-clone some.server.tld Path/to/projectfolder
+
+The "projectfolder" should not exist and not contain the _.git_ suffix.
